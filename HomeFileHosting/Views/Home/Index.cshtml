@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="table">
+    <h4>Public files</h4>
+    <table class="table table-hover">
+        @foreach (var f in ViewBag.PublicFiles)
+        {
+            <tr>
+                <td><p>@f.Name</p></td>
+                <td><p>@f.Owner</p></td>
+                <td><p>@f.DateUpload</p></td>
+                <td>@Html.ActionLink("Download", "GetFile", "Home", new { id=f.Id }, new {@class="btn btn-primary" })</td>
+            </tr>
+        }
+    </table>
+</div>
